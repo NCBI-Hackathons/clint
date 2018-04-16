@@ -14,7 +14,7 @@ Go directly from an image to other image databases and find the most similar sca
 
 In a perfect world here's hour CLINT might work:
 
-![CLINT Workflow](docs/nspp_workflow.png)
+![CLINT Workflow](docs/clint_workflow.png)
 
 
 Todo:
