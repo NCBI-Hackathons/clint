@@ -18,10 +18,10 @@ In a perfect world here's hour Neurosynth++ might work:
 
 
 Todo:
-Get a better name
-Find Data
-Parse reports
-Query Neurosynth
-Aggregate Neurosynth reports
-Create FHIR JSON
-Containerize endpoint and drop it on an AWS box
+1. Get a better name
+2. Find Data
+3. Parse reports
+4. Query Neurosynth
+5. Aggregate Neurosynth reports
+6. Create FHIR JSON
+7. Containerize endpoint and drop it on an AWS box
