@@ -1,5 +1,5 @@
-# Neurosynth++ (Name to be improved)
-Linking clinical insights with research literature
+# CLINT (CLInical Neurosynth Translator)
+Linking clinical questions with fMRI research literature
 
 [Neurosynth](http://neurosynth.org/) is a database of functional neuroimaging results linking function with brain locations from over 11,000 published fMRI studies. 
 
@@ -12,9 +12,9 @@ Similarly, sometime it takes a long time to get a patient into the scanner, if y
 # Aim 3
 Go directly from an image to other image databases and find the most similar scans (definition TBD) and their metadata.
 
-In a perfect world here's hour Neurosynth++ might work:
+In a perfect world here's hour CLINT might work:
 
-![Neurosynth++ Workflow](docs/nspp_workflow.png)
+![CLINT Workflow](docs/nspp_workflow.png)
 
 
 Todo:
