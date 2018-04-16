@@ -15,3 +15,13 @@ Go directly from an image to other image databases and find the most similar sca
 In a perfect world here's hour Neurosynth++ might work:
 
 ![Neurosynth++ Workflow](docs/nspp_workflow.png)
+
+
+Todo:
+Get a better name
+Find Data
+Parse reports
+Query Neurosynth
+Aggregate Neurosynth reports
+Create FHIR JSON
+Containerize endpoint and drop it on an AWS box
