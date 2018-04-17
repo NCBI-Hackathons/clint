@@ -17,11 +17,14 @@ In a perfect world here's hour CLINT might work:
 ![CLINT Workflow](docs/clint_workflow.png)
 
 
-Todo:
-1. Get a better name
-2. Find Data
-3. Parse reports
-4. Query Neurosynth
-5. Aggregate Neurosynth reports
+TODO:
+~~1. Get a better name~~ (Unless someones thinks of something better still)
+~~2. Find Data~~  
+  [Synthetic Public Use File from OHDSI parsed with their ETL-CMS tool](https://github.com/OHDSI/ETL-CMS)
+3. Parse reports  
+  In progress. We've got [Snowmed](http://bioportal.bioontology.org/ontologies/SNOMEDCT) condition codes that we'll link with neurosynth keywords.  
+4. Query Neurosynth  
+  In progress. We understand the detailed workflows for our interactions with neurosynth, implementing these workflows now.  
+5. Aggregate Neurosynth reports  
 6. Create FHIR JSON
 7. Containerize endpoint and drop it on an AWS box
