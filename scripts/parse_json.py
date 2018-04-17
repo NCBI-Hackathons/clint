@@ -13,7 +13,8 @@ import requests
 from pprint import pprint
 import numpy as np
 import matplotlib.pyplot as plt
-
+import requests
+import shutil
 
 #Opens the json file
 with open('data.json') as data_file:
@@ -114,8 +115,22 @@ term_decode = get_neurosynth(url,'images', terms_tobequeried)
 print(term_decode)
 
 
-#Importing the image that was queried from the term
-urllib.urlretrieve(url_image + image_number)
+def download_file(url):
+    local_filename = url.split('/')[-1]
+    r = requests.get(url, stream=True)
+    with open(local_filename, 'wb') as f:
+        shutil.copyfileobj(r.raw, f)
+
+    return local_filename
+
+
+#Importing the image that was queried from an example term
+id1, id2 = parse_image_url(term_decode)
+image_number = id1
+mu = url_image + image_number
+download_file(mu)
+#image is stored in a file called 601, which is the image id
+
 
 
 ################################
