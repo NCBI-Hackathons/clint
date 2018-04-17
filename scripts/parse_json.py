@@ -115,21 +115,29 @@ term_decode = get_neurosynth(url,'images', terms_tobequeried)
 print(term_decode)
 
 
-def download_file(url):
-    local_filename = url.split('/')[-1]
+def download_file(url, file_info):
+    """
+    this function takes a url, an id, and file info, and downloads the image associated with a term querry, and uses an informative filename
+    """
+    local_filename = file_info + url.split('/')[-1] + ".gz"
     r = requests.get(url, stream=True)
     with open(local_filename, 'wb') as f:
         shutil.copyfileobj(r.raw, f)
-
+    print("Successfully downloaded ", local_filename)
     return local_filename
 
+def gimme_image(term_decode):
+    """
+    This function calls download_file and parse_image_url. You pass in the ouput of a term querry, it parses the URLS and downloads the images at once
+    This is made into a function to avoid having to repeat multiple function calls
+    """
+    b1, b2 = parse_image_url(term_decode)
+    download_file("http://neurosynth.org/images/" + b1, "forward_inference_") ### would like to pass in the term associated with this image
+    download_file("http://neurosynth.org/images/" + b2, "reverse_inference_") ### would like to pass in the term associated with this image
 
-#Importing the image that was queried from an example term
-id1, id2 = parse_image_url(term_decode)
-image_number = id1
-mu = url_image + image_number
-download_file(mu)
-#image is stored in a file called 601, which is the image id
+
+
+
 
 
 
