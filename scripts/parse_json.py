@@ -30,6 +30,16 @@ print(x)
 
 ####################################################
 
+def parse_image_url(term_decode):
+    """
+    This function takes the contents of a term querry and returns the id corresponding to the image map
+    """
+    a = term_decode.decode("utf-8")
+    b = a.split("id")
+    b1 = b[1].split('\n')[0].split()[1].split(',')[0]
+    b2 = b[2].split('\n')[0].split()[1].split(',')[0]
+    return b1, b2
+
 
 def get_neurosynth(url, querytype, query):
     """
