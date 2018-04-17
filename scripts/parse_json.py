@@ -1,4 +1,4 @@
-####################################################
+###################################################
 ##This file is used to parse the JSON file and extract the
 #data and save in lists.
 #The lists can be used as params to be passed to the http://neurosynth.org/api/v2/ API
@@ -64,24 +64,40 @@ def get_neurosynth(url, querytype, query):
     elif querytype == 'decode':
         result = requests.get(url+querytype+'/', params=query)
         return result.content
+    elif querytype == 'image':
+	result = requests.get(url+querytype+'/', params=query)
+	return result.content
 
+#Location query
 voxel_list = {'x':'2', 'y':'4', 'z':'5'}
+
+#Terms query
 url ='http://neurosynth.org/api/v2/'
 # The url2 link is a link to be used in Neuro image decoder
 url2 = {'url':'https%3A%2F%2Fneurovault.org%2Fmedia%2Fimages%2F2531%2Fphon_diff_fwe.nii.gz'}
 #This makes it url safe and avoids the % addition from python
 urls = "&".join("%s=%s" % (k,v) for k,v in url2.items())
 
+# Image query
+terms_tobequeried = {'search':'broca'} # can be a list of strings
+
+
 ################################
 
 #Test data set (1 location) with function call to get_neurosynth
 #url2 = https://neurovault.org/media/images/2531/phon_diff_fwe.nii.gz
 #data_new = get_neurosynth(url, 'locations', voxel_list)
+
+# Given images, find the terms
 image_decode = get_neurosynth(url,'decode', urls).decode("utf-8")
+
+# Given terms, find images
+term_decode = get_neurosynth(url,'image', terms_tobequeried) 
 
 #print(urls)
 # Output from image decoder function within Neurosynth
-print(image_decode)
+#print(image_decode)
+print(term_decode)
 
 ################################
 
