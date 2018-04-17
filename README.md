@@ -18,8 +18,8 @@ In a perfect world here's hour CLINT might work:
 
 
 TODO:  
-~~1. Get a better name~~ (Unless someones thinks of something better still)  
-~~2. Find Data~~  
+1. ~~Get a better name~~ (Unless someones thinks of something better still)  
+2. ~~Find Data~~  
   * [Synthetic Public Use File from OHDSI parsed with their ETL-CMS tool](https://github.com/OHDSI/ETL-CMS)  
 3. Parse reports  
   * In progress. We've got [Snowmed](http://bioportal.bioontology.org/ontologies/SNOMEDCT) condition codes that we'll link with neurosynth keywords.  
