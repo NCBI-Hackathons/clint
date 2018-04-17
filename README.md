@@ -17,7 +17,7 @@ In a perfect world here's hour CLINT might work:
 ![CLINT Workflow](docs/clint_workflow.png)
 
 
-TODO:
+TODO:  
 ~~1. Get a better name~~ (Unless someones thinks of something better still)  
 ~~2. Find Data~~  
   * [Synthetic Public Use File from OHDSI parsed with their ETL-CMS tool](https://github.com/OHDSI/ETL-CMS)  
