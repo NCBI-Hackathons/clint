@@ -65,8 +65,8 @@ def get_neurosynth(url, querytype, query):
         result = requests.get(url+querytype+'/', params=query)
         return result.content
     elif querytype == 'images':
-	result = requests.get(url+querytype+'/', params=query)
-	return result.content
+        result = requests.get(url+querytype+'/', params=query)
+        return result.content
 
 #Location query
 voxel_list = {'x':'2', 'y':'4', 'z':'5'}
@@ -120,7 +120,7 @@ def parse_decoder_output(data):
 
 
 my_dict = parse_decoder_output(image_decode)
-cors = np.array(list(my_dict.values()))
+#cors = np.array(list(my_dict.values()))
 
-plt.hist(cors, 50)
-plt.show()
+#plt.hist(cors, 50)
+#plt.show()
