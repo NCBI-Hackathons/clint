@@ -74,10 +74,29 @@ urls = "&".join("%s=%s" % (k,v) for k,v in url2.items())
 #Test data set (1 location) with function call to get_neurosynth
 #url2 = https://neurovault.org/media/images/2531/phon_diff_fwe.nii.gz
 #data_new = get_neurosynth(url, 'locations', voxel_list)
-image_decode = get_neurosynth(url,'decode', urls)
+image_decode = get_neurosynth(url,'decode', urls).decode("utf-8")
 
 #print(urls)
 # Output from image decoder function within Neurosynth
 print(image_decode)
 
 ################################
+
+def parse_decoder_output(data):
+    """
+    This function takes the output of a neurosynth decoder querry
+    It parses the output and returns a key-value pairing where the keys are the neurosynth terms, and values are correlations
+    """
+    termas = data.split('values')[1]
+    termn = ''.join(termas).split('\n')
+    dicionarios = [i.split(':') for i in termn]
+    d = dicionarios[1:-1]
+    my_dict = {}
+    for i in range(len(d)):
+        term = d[i][0].split('"')[1]
+        cor = float(d[i][1].split(',')[0])
+        my_dict[term] = cor
+    return my_dict
+
+
+my_dict = parse_decoder_output(image_decode)
