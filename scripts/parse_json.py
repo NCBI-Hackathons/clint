@@ -67,6 +67,6 @@ url ='http://neurosynth.org/api/v2/'
 #Test data set (1 location) with function call to get_neurosynth
 
 data_new = get_neurosynth(url, 'locations', voxel_list)
-#print(data_new)
+
 
 ################################
