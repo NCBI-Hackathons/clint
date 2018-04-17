@@ -64,7 +64,7 @@ def get_neurosynth(url, querytype, query):
     elif querytype == 'decode':
         result = requests.get(url+querytype+'/', params=query)
         return result.content
-    elif querytype == 'image':
+    elif querytype == 'images':
 	result = requests.get(url+querytype+'/', params=query)
 	return result.content
 
@@ -92,7 +92,8 @@ terms_tobequeried = {'search':'broca'} # can be a list of strings
 image_decode = get_neurosynth(url,'decode', urls).decode("utf-8")
 
 # Given terms, find images
-term_decode = get_neurosynth(url,'image', terms_tobequeried) 
+term_decode = get_neurosynth(url,'images', terms_tobequeried) 
+
 
 #print(urls)
 # Output from image decoder function within Neurosynth
