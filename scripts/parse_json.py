@@ -7,6 +7,7 @@
 
 
 ####################################################
+import urllib
 import json
 import requests
 from pprint import pprint
@@ -79,6 +80,8 @@ url2 = {'url':'https%3A%2F%2Fneurovault.org%2Fmedia%2Fimages%2F2531%2Fphon_diff_
 urls = "&".join("%s=%s" % (k,v) for k,v in url2.items())
 
 # Image query
+url_image = "http://neurosynth.org/images/"
+
 terms_tobequeried = {'search':'broca'} # can be a list of strings
 
 
@@ -99,6 +102,11 @@ term_decode = get_neurosynth(url,'images', terms_tobequeried)
 # Output from image decoder function within Neurosynth
 #print(image_decode)
 print(term_decode)
+
+
+#Importing the image that was queried from the term
+urllib.urlretrieve(url_image + image_number)
+
 
 ################################
 
