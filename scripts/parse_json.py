@@ -31,20 +31,20 @@ def get_neurosynth(url, querytype, query):
     """
     Function definition for querying Neurosynth API
     This function used to query the Neurosynth API, with input parameters as lists that 
-    contain the keys and values.
+    contain the keys and values obtained from EMR data.
     Input: url; querytype for e.g. 'locations', 'images', 'gene' etc; query:values obtained from parsed
     files.
 
-    Output: Output from the query to Neurosynth
+    Output: Output from Neurosynth query
     
     Parameters
     ----------
     param1 : str
         This is a link for Neurosynth API.
     param2 : str
-        The querytype for e.g. 'locations', 'images', 'gene' etc
+        The querytype for e.g. 'locations', 'images', 'gene'
     param3 : list
-        These are list of parameter values obtained from a list 
+        These are list of parameter values obtained from a parsed list from EMR
     
     Returns
     -------
