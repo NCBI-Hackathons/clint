@@ -1,6 +1,6 @@
 ####################################################
-##This file is used to parse the JSON file and extract the 
-#data and save in lists. 
+##This file is used to parse the JSON file and extract the
+#data and save in lists.
 #The lists can be used as params to be passed to the http://neurosynth.org/api/v2/ API
 
 # NCBI Hackathon Team: brainimages
@@ -10,9 +10,12 @@
 import json
 import requests
 from pprint import pprint
+import numpy as np
+import matplotlib.pyplot as plt
 
-#Opens the json file 
-with open('data.json') as data_file:    
+
+#Opens the json file
+with open('data.json') as data_file:
     data = json.load(data_file)
 
 #print(len(data['parameters']))
@@ -30,13 +33,13 @@ print(x)
 def get_neurosynth(url, querytype, query):
     """
     Function definition for querying Neurosynth API
-    This function used to query the Neurosynth API, with input parameters as lists that 
+    This function used to query the Neurosynth API, with input parameters as lists that
     contain the keys and values obtained from EMR data.
     Input: url; querytype for e.g. 'locations', 'images', 'gene' etc; query:values obtained from parsed
     files.
 
     Output: Output from Neurosynth query
-    
+
     Parameters
     ----------
     param1 : str
@@ -45,11 +48,11 @@ def get_neurosynth(url, querytype, query):
         The querytype for e.g. 'locations', 'images', 'gene'
     param3 : list
         These are list of parameter values obtained from a parsed list from EMR
-    
+
     Returns
     -------
     Query results from Neurosynth API
-    
+
     """
     if querytype == 'locations':
         result = requests.get(url+querytype+'/', params=query)
@@ -66,7 +69,7 @@ voxel_list = {'x':'2', 'y':'4', 'z':'5'}
 url ='http://neurosynth.org/api/v2/'
 # The url2 link is a link to be used in Neuro image decoder
 url2 = {'url':'https%3A%2F%2Fneurovault.org%2Fmedia%2Fimages%2F2531%2Fphon_diff_fwe.nii.gz'}
-#This makes it url safe and avoids the % addition from python 
+#This makes it url safe and avoids the % addition from python
 urls = "&".join("%s=%s" % (k,v) for k,v in url2.items())
 
 ################################
@@ -100,3 +103,7 @@ def parse_decoder_output(data):
 
 
 my_dict = parse_decoder_output(image_decode)
+cors = np.array(list(my_dict.values()))
+
+plt.hist(cors, 50)
+plt.show()
