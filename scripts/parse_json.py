@@ -58,15 +58,26 @@ def get_neurosynth(url, querytype, query):
     elif querytype == 'symptom':
         result = requests.get(url+querytype+'/', params=query)
         return result.content
+    elif querytype == 'decode':
+        result = requests.get(url+querytype+'/', params=query)
+        return result.content
 
 voxel_list = {'x':'2', 'y':'4', 'z':'5'}
 url ='http://neurosynth.org/api/v2/'
+# The url2 link is a link to be used in Neuro image decoder
+url2 = {'url':'https%3A%2F%2Fneurovault.org%2Fmedia%2Fimages%2F2531%2Fphon_diff_fwe.nii.gz'}
+#This makes it url safe and avoids the % addition from python 
+urls = "&".join("%s=%s" % (k,v) for k,v in url2.items())
 
 ################################
 
 #Test data set (1 location) with function call to get_neurosynth
+#url2 = https://neurovault.org/media/images/2531/phon_diff_fwe.nii.gz
+#data_new = get_neurosynth(url, 'locations', voxel_list)
+image_decode = get_neurosynth(url,'decode', urls)
 
-data_new = get_neurosynth(url, 'locations', voxel_list)
-
+#print(urls)
+# Output from image decoder function within Neurosynth
+print(image_decode)
 
 ################################
