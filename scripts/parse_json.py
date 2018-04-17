@@ -23,17 +23,34 @@ for i in range(len(data['parameters'])):
     x.append(data['parameters'][i]['id'])
 print(x)
 
-####################################################
-# This function used to query the Neurosynth API, with input parameters as lists that contain the keys and values
-#input: url; querytype for e.g. 'locations', 'images', 'gene' etc; query:values obtained from
-#parsed files above
-
-#output: output from the query to Neurosynth
 
 ####################################################
 
-#Function definition for querying Neurosynth
+
 def get_neurosynth(url, querytype, query):
+    """
+    Function definition for querying Neurosynth API
+    This function used to query the Neurosynth API, with input parameters as lists that 
+    contain the keys and values.
+    Input: url; querytype for e.g. 'locations', 'images', 'gene' etc; query:values obtained from parsed
+    files.
+
+    Output: Output from the query to Neurosynth
+    
+    Parameters
+    ----------
+    param1 : str
+        This is a link for Neurosynth API.
+    param2 : str
+        The querytype for e.g. 'locations', 'images', 'gene' etc
+    param3 : list
+        These are list of parameter values obtained from a list 
+        
+    Returns
+    -------
+    Query results from Neurosynth API
+    
+    """
     if querytype == 'locations':
         result = requests.get(url+querytype+'/', params=query)
         #return result.url #Checks the url
