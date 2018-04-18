@@ -6,8 +6,8 @@
 
 #### How to cite this work in a publication:  (doi: )
 
-**CLINT** is a data gathering and query pipeline that will parse EMR reports, interface with Neurosynth to produce a list of symptoms correlated to structures or structures correlated to symptoms queried and return a report in an EHR(electronic health record) ingestible format.
-[Neurosynth](http://neurosynth.org/) is a database of functional neuroimaging results linking function with brain locations from over 11,000 published fMRI studies.
+CLInical Neurosynth Translator (**CLINT**) is a data gathering and query pipeline that will parse EMR reports, interface with Neurosynth to produce a list of symptoms correlated to structures or structures correlated to symptoms queried and return a report in an electronic medical record (EMR) ingestible format.
+[Neurosynth](http://neurosynth.org/) is a database of functional neuroimaging results linking function with brain locations from over 11,000 published functional magnetic resonance imaging (fMRI) studies.
 
 This project was part of the [Spring 2018 NCBI Hackathon](https://docs.google.com/document/d/18LTB50P15sEGclj4fEFyk3_EftxbiZ5HiMomv0yRuLQ/edit)
 
