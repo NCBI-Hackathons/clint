@@ -45,7 +45,9 @@ In order to implement CLINT follow the steps below:
 Step 1.
 
 ## Sample Outputs
+
 ![SampleBrainMaps](docs/brainmapsampleoutput.png)
+
 Todo:
 1. Get a better name
 2. Find Data
