@@ -85,17 +85,6 @@ def get_image_from_term(url, terms_tobequeried):
     download_file(mu2, terms_tobequeried['search'] + "_reverse")
 
 
-
-
-
-<<<<<<< HEAD:scripts/parse_json.py
-
-
-
-################################
-
-=======
->>>>>>> 272a830440b4cb612611f98f46142271fc12766e:scripts/clint.py
 def parse_decoder_output(data):
     """
     This function takes the output of a neurosynth decoder querry
