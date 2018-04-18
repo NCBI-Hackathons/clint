@@ -77,6 +77,7 @@ def download_file(url, file_info):
 
 
 def get_image_from_term(url, terms_tobequeried):
+    url_image = "http://neurosynth.org/images/"
     term_decode = get_neurosynth(url,'images', terms_tobequeried)
     id1, id2 = parse_image_url(term_decode)
     mu = url_image + id1

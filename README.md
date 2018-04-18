@@ -1,4 +1,4 @@
-![CLINT logo](docs/ClintLogo80.png)
+![CLINT logo](docs/ClintLogo.png)
 
 # CLINT (CLInical Neurosynth Translator)
 ###An electronic medical record (EMR) pipeline using neurosynth to link clinical data with fMRI research literature
