@@ -6,7 +6,7 @@
 
 #### How to cite this work in a publication:  (doi: )
 
-**CLINT** is a data gathering and query pipeline that will parse the electronic medical record (EMR) reports, interface with Neurosynth to produce a list of symptoms correlated to structures or structures correlated to symptoms queried and return a report in an EMR ingestible format.
+**CLINT** is a data gathering and query pipeline that will parse electronic medical record (EMR) reports, interface with Neurosynth to produce a list of symptoms correlated to structures or structures correlated to symptoms queried and return a report in an EMR ingestible format.
 [Neurosynth](http://neurosynth.org/) is a database of functional neuroimaging results linking function with brain locations from over 11,000 published functional magnetic resonance imaging (fMRI) studies.
 
 
@@ -50,13 +50,11 @@ Step 1.
 ![SampleBrainMaps](docs/brainmapsampleoutput.png)
 
 Todo:
-1. Get a better name
-2. Find Data
-3. Parse reports
-4. Query Neurosynth
-5. Aggregate Neurosynth reports
-6. Create FHIR JSON
-7. Containerize endpoint and drop it on an AWS box
+1. Parse reports
+2. Query Neurosynth
+3. Aggregate Neurosynth reports
+4. Create FHIR JSON
+5. Containerize endpoint and drop it on an AWS box
 
 
 #### Acknowledgements
