@@ -23,7 +23,7 @@ When searching for patients to enroll in clinical trials study directors could p
 
 In a perfect world here's how CLINT might work:
 
-![CLINT Workflow](docs/clint_workflow2.png)
+![CLINT Workflow](docs/clint_workflow.png)
 
 ## Dependencies:computer:
 
