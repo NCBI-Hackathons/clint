@@ -15,6 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import requests
 import shutil
+import os
 
 
 def parse_image_url(term_decode):
@@ -67,12 +68,18 @@ def get_neurosynth(url, querytype, query):
         return result.content
 
 
-def download_file(url, file_info):
+def download_file(url, file_info, file_path="../data/tmp", overwrite=False):
+    if not os.path.exists(file_path):
+        os.mkdir(file_path)
+    file_info = file_path + '/' + file_info
     local_filename = file_info + url.split('/')[-1] + ".nii.gz"
-    r = requests.get(url, stream=True)
-    with open(local_filename, 'wb') as f:
-        shutil.copyfileobj(r.raw, f)
-    print("download of " + local_filename + " was successful ")
+    if not os.path.exists(local_filename) or overwrite:
+        r = requests.get(url, stream=True)
+        with open(local_filename, 'wb') as f:
+            shutil.copyfileobj(r.raw, f)
+        print("download of " + local_filename + " was successful ")
+    else:
+        print("File in cache, download skipped")
     return local_filename
 
 
@@ -81,9 +88,10 @@ def get_image_from_term(url, terms_tobequeried):
     term_decode = get_neurosynth(url,'images', terms_tobequeried)
     id1, id2 = parse_image_url(term_decode)
     mu = url_image + id1
-    download_file(mu, terms_tobequeried['search'] + "_forward")
+    forward_fn = download_file(mu, terms_tobequeried['search'] + "_forward")
     mu2 = url_image + id2
-    download_file(mu2, terms_tobequeried['search'] + "_reverse")
+    reverse_fn = download_file(mu2, terms_tobequeried['search'] + "_reverse")
+    return (forward_fn, reverse_fn)
 
 
 def parse_decoder_output(data):
