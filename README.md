@@ -1,8 +1,8 @@
 ![CLINT logo](docs/ClintLogo.png)
 
 # CLINT (CLInical Neurosynth Translator)
-###An electronic medical record (EMR) pipeline using neurosynth to link clinical data with fMRI research literature
-#####Hackathon team: Lead: Dylan M. Nielson - SysAdmins: Ben Cohen, Meghna Verma, Zehai Wang - Writer: Mostafa Lotfi
+### An electronic medical record (EMR) pipeline using neurosynth to link clinical data with fMRI research literature
+##### Hackathon team: Lead: Dylan M. Nielson - SysAdmins: Ben Cohen, Meghna Verma, Zehai Wang - Writers: Mostafa Lotfi, Ben Cohen, Dylan M. Nielson, Meghna Verma, Zehai Wang
 
 #### How to cite this work in a publication:  (doi: )
 
@@ -21,17 +21,28 @@ Similarly, sometime it takes a long time to get a patient into the scanner, if y
 ## Application 3
 When searching for patients to enroll in clinical trials study directors could provide a list of desired patient symptoms and CLINT could output the corresponding anatomical mask and EMRs
 
-In a perfect world here's hour CLINT might work:
+In a perfect world here's how CLINT might work:
 
-![CLINT Workflow](docs/clint_workflow.png)
+![CLINT Workflow](docs/clint_workflow2.png)
 
 ## Dependencies:computer:
 
-*Software*: [Docker](https://www.docker.com/) is the leading software container platform.
+*Software*: 
+[Neurosynth](http://neurosynth.org/)
+[Docker](https://www.docker.com/)
 
-###Databases
+
+### Databases
 EMR's:[OHDSI/ETL-CMS github](https://github.com/OHDSI/ETL-CMS)
-Brain Atlas: [FSL-Harvard-Oxford-Atlases](http://neuro.debian.net/pkgs/fsl-harvard-oxford-atlases.html)
+Brain Atlas:
+[FMRIB Software Library Main page](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki)
+[FMRIB Software Library Atlases](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases)
+[FSL-Harvard-Oxford-Atlases](http://neuro.debian.net/pkgs/fsl-harvard-oxford-atlases.html)
+
+## Workflow Implementation
+In order to implement CLINT follow the steps below:
+
+Step 1.
 
 
 Todo:
@@ -44,7 +55,8 @@ Todo:
 7. Containerize endpoint and drop it on an AWS box
 
 
-##Acknowledgements
+#### Acknowledgements
 [MetagenomicsAntibioticResistance github](https://github.com/NCBI-Hackathons/MetagenomicAntibioticResistance/blob/master/README.md) used as a template for formatting and organization
+
 
 
