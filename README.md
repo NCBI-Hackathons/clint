@@ -44,6 +44,7 @@ In order to implement CLINT follow the steps below:
 
 Step 1.
 
+## Sample Outputs
 
 Todo:
 1. Get a better name
