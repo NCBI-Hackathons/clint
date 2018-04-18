@@ -68,7 +68,7 @@ def get_neurosynth(url, querytype, query):
 
 
 def download_file(url, file_info):
-    local_filename = file_info + url.split('/')[-1] + ".gz"
+    local_filename = file_info + url.split('/')[-1] + ".nii.gz"
     r = requests.get(url, stream=True)
     with open(local_filename, 'wb') as f:
         shutil.copyfileobj(r.raw, f)
